@@ -39,6 +39,9 @@ if (sys.argv[1] == "-h" or sys.argv[1] == "--help"):
     print("Please hold the pen on the tablet surface while running")
     sys.exit()
 
+print("Please hold the pen on the tablet surface while running this program.")
+input("Press Enter to continue")
+
 # Parse arguments
 try:
     vid, pid = [int(i, 16) for i in sys.argv[1].split(":")]
