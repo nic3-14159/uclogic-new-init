@@ -16,10 +16,15 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import sys
+from os import getuid
 import usb.core
 import usb.util
 
 key_packets = ['02B002', '02B004']
+
+if getuid() != 0:
+    print("This program must be run with root privileges")
+    sys.exit()
 
 # Check number of arguments
 if len(sys.argv) < 2:
