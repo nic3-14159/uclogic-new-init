@@ -7,8 +7,6 @@ Newer uclogic based drawing tablets seem to require a "key packet" to be sent to
 
 This utility aims to discover the key packet which needs to be sent to the device, as well as the interface it needs to be sent on. As of now, there is no known pattern to the packets, so it simply tries a list of known packets (2 as of now).
 
-Currently only the python version works properly.
-
 Who should use this
 -------------------
 You should use this program if your tablet shows characteristics of needing a "key packet". One key indicator is the output of `usbhid-dump` while collecting events for the tablet frame buttons. Tablet buttons should report as a bitmap, so you should see values like 01, 02, 04, 08, 10, 20, 40 or 80 while pressing the buttons. If pressing the buttons causes values like 05, 0C or 01 16 to show up, it is likely that these are keyboard events and thus the tablet may require the key packet.
